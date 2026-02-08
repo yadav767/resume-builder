@@ -41,7 +41,7 @@ async function enhanceJobDescription(req, res) {
             })
         }
         const response = await ai.chat.completions.create({
-            model: "gemini-2.0-flash",
+            model: "gemini-3-flash-preview",
             messages: [
                 { role: "system", content: "You are an expert in resume writing .Your task is to enhance the job description for a resume.The job description should be only in 1-2 sentence also highlighting key responsibilities and achievements .Use action verbs and quantifiable results where possible .Make it ATS-friendly .and only return text no options or anything else." },
                 {
