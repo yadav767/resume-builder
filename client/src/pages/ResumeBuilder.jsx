@@ -39,7 +39,6 @@ const ResumeBuilder = () => {
         document.title = data.resume.title
       }
     } catch (error) {
-      console.log(error.message);
     }
   }
   const [activeSectionIndex, setActiveSectionIndex] = useState(0)
@@ -68,7 +67,6 @@ const ResumeBuilder = () => {
       toast.success(data.message)
 
     } catch (error) {
-      console.log("Error saving resume :", error);
 
     }
   }

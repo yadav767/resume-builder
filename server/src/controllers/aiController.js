@@ -11,7 +11,7 @@ async function enhanceProfessionalSummary(req, res) {
             })
         }
         const response = await ai.chat.completions.create({
-            model: "gemini-2.0-flash",
+            model: "gemini-3-flash-preview",
             messages: [
                 { role: "system", content: "You are an expert in resume writing your task is to enhance the professional summary of a resume .The summary should be 1-2 sentences,also highlighting key skills ,esperience and career objectives .Make it compelling and ATS-friendly .and only return text np options or anything else." },
                 {
@@ -21,7 +21,6 @@ async function enhanceProfessionalSummary(req, res) {
             ],
         })
         const enhancedContent = response.choices[0].message.content
-        console.log(enhancedContent);
         return res.status(200).json({
             enhancedContent
         })
@@ -156,7 +155,6 @@ async function uploadResume(req, res) {
         })
         const extractedData = response.choices[0].message.content
         const parsedData = JSON.parse(extractedData)
-        console.log(parsedData);
         const newResume = await resumeModel.create({
             userId, title, ...parsedData
         })

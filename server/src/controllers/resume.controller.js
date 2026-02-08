@@ -99,7 +99,6 @@ async function getResumeById(req, res) {
 async function getPublicResumeById(req, res) {
     try {
         const { resumeId } = req.params;
-        console.log(resumeId);
         const resume = await resumeModel.findOne({ public: true, _id: resumeId });
         if (!resume) {
             return res.status(404).json({ message: "Resume not found" })

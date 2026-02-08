@@ -15,7 +15,6 @@ const Preview = () => {
       const { data } = await api.get("/api/resumes/public/" + resumeId )
       setResumeData(data.resume)
     } catch (error) {
-      console.log(error.message);
     }
     finally{
       setIsLoading(false)

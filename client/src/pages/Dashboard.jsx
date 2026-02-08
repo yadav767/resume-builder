@@ -49,7 +49,6 @@ const Dashboard = () => {
     try {
       const resumeText = await pdfToText(resume)
       const { data } = await api.post("/api/ai/upload-resume", { title, resumeText }, { headers: { Authorization: token } })
-      console.log(data);
       setTitle('')
       setResume(null)
       setShowUploadResume(false);
@@ -72,7 +71,6 @@ const Dashboard = () => {
 
     } catch (error) {
       toast.error(error?.response?.data?.message || error.message)
-      console.log(error);
 
     }
 
