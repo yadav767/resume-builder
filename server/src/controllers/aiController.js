@@ -143,7 +143,7 @@ async function uploadResume(req, res) {
 
         `
         const response = await ai.chat.completions.create({
-            model: "gemini-2.0-flash",
+            model: "gemini-2.5-flash",
             messages: [
                 { role: "system", content: systemPrompt },
                 {

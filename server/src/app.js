@@ -16,7 +16,7 @@ app.use("/api/ai", aiRouter)
 app.get("/", (req, res) => {
     res.send("Server is live.....");
     console.log("server is live");
-})
+})  
 
 
 module.exports = app;
